@@ -1,6 +1,9 @@
 basic.forever(function () {
-    led.toggle(2, 2)
-    if (pins.analogReadPin(AnalogPin.P1) < 512) {
+    led.plotBarGraph(
+    pins.analogReadPin(AnalogPin.P1),
+    2048
+    )
+    if (pins.analogReadPin(AnalogPin.P1) == 0) {
         music.playTone(1046, music.beat(BeatFraction.Sixteenth))
     }
 })
